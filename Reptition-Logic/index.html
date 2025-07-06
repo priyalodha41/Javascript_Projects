@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.1">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+</head>
+<body>
+    
+
+    <div class="container">
+       <div class="main-box">
+                <div class="all-boxes d-flex justify-content-center align-items-center mb-2">
+                        <div id="box">
+                    </div>
+                </div>
+                <div class="func-btn">
+                    <button class="btn-primary btn" id="random">Random</button>
+                    <button class="btn-primary btn" id="max">Max</button>
+                    <button class="btn-primary btn" id="min">Min</button>
+                    <button class="btn-primary btn" id="clear">Clear</button>
+                </div>
+       </div>
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/index.js"></script>
+
+    <script>
+        $(document).ready(function(){
+
+            let container_item=document.getElementById("box");
+            let inputs = document.getElementById("num-");
+            let maxIndex;
+            let minIndex;
+
+
+            for(let i=1; i<=10; i++){
+                container_item.innerHTML+=`<input type="number" class="form-control" id="num-${i}"><br/>`;
+            }
+
+            $("#random").click(function(){
+                for(let i=1; i<=10; i++){
+                   document.getElementById(`num-${i}`).value=parseInt(Math.random()*100);
+                }
+                $(document.getElementById(`num-${minIndex}`)).removeClass("highlighter");
+                $(document.getElementById(`num-${maxIndex}`)).removeClass("highlight");
+             })
+
+             $("#clear").click(function(){
+                 for(let i=1; i<=10; i++){
+                    document.getElementById(`num-${i}`).value=" ";
+                }
+
+                $(document.getElementById(`num-${minIndex}`)).removeClass("highlighter");
+                $(document.getElementById(`num-${maxIndex}`)).removeClass("highlight");
+
+                })
+
+             $("#max").click(function(){
+                let max=-Infinity;
+
+                 for(let i=1; i<=10; i++){
+
+                    let value = parseInt(document.getElementById(`num-${i}`).value);
+                    if(max<value){
+                        max=value;
+                        maxIndex=i;
+                    }
+                }
+                
+                for (let i = 1; i <=10; i++) {
+                    let value = parseInt(document.getElementById(`num-${i}`).value);
+                    $(value[i]).removeClass("highlight");
+                }
+                if (maxIndex) {
+                    $(document.getElementById(`num-${maxIndex}`)).addClass("highlight");
+                }
+
+                  $(document.getElementById(`num-${minIndex}`)).removeClass("highlighter");
+             })
+
+              $("#min").click(function(){
+                let min=Infinity;
+                 for(let i=1; i<=10; i++){
+                    let value = parseInt(document.getElementById(`num-${i}`).value);
+                    if(min>value){
+                        min=value;
+                        minIndex=i;
+                    }
+                }
+                for (let i = 1; i <=10; i++) {
+                        let value = parseInt(document.getElementById(`num-${i}`).value);
+                        $(value[i]).removeClass("highlighter");
+                    }
+                    if (minIndex) {
+                        $(document.getElementById(`num-${minIndex}`)).addClass("highlighter");
+                }
+                $(document.getElementById(`num-${maxIndex}`)).removeClass("highlight");
+             })
+             
+
+        })
+    </script>
+
+
+</body>
+</html>

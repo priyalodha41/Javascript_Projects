@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+
+    <style>
+        button{
+            color:chocolate;
+            background-color:black;
+            border: none;
+            font-size: 16px;
+            padding: 13px;
+            border-radius: 8px;
+        }
+        body{
+            background-color: beige;
+            text-align: center;
+        }
+        h1{
+            color: chocolate;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Basic Calculator using Javascript</h1>
+
+    
+    <br>
+    <label for="num1">Number 1 :</label>
+    <input type="number" id="num1">
+
+    <br><br><br>
+
+    <label for="num2">Number 2 :</label>
+    <input type="number" id="num2">
+
+   <br><br>
+
+    <h3></h3>
+
+    <br><br><br>
+
+    <button id="btn1">Addition</button>
+    &nbsp;
+    <button id="btn2">Subtraction</button>
+    &nbsp;
+    <button id="btn3">Multiplication</button>
+    &nbsp;
+    <button id="btn4">Modulus</button>
+    &nbsp;
+    <button id="btn5">Division</button>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+            $("#btn1").click(function(){
+                let a= parseFloat($("#num1").val());
+                let b= parseFloat($("#num2").val());
+                $("h3").html(`Addition: ${a+b}`);
+            })
+            $("#btn2").click(function(){
+                let a= parseFloat($("#num1").val());
+                let b= parseFloat($("#num2").val());
+                $("h3").html(`Subtraction : ${a-b}`);
+            })
+            $("#btn3").click(function(){
+                let a= parseFloat($("#num1").val());
+                let b= parseFloat($("#num2").val());
+                $("h3").html(`Multiplication : ${a*b}`);
+            })
+            $("#btn4").click(function(){
+                let a= parseFloat($("#num1").val());
+                let b= parseFloat($("#num2").val());
+                $("h3").html(`Modulus : ${a%b}`);
+            })
+            $("#btn5").click(function(){
+                let a= parseFloat($("#num1").val());
+                let b= parseFloat($("#num2").val());
+                $("h3").html(`Division: ${a/b}`);
+            })
+        });
+
+
+    </script>
+</body>
+</html>

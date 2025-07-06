@@ -1,0 +1,35 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-decoration: none;
+}
+body{
+ background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(240,139,139,1) 0%, rgba(243,252,166,1) 90% );
+
+}
+.validation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+#form{
+    background-color:blanchedalmond;
+    width: 700px;
+    padding: 15px;
+    border-radius: 13px;
+    box-shadow: 1px 1px 18px rgb(226, 167, 90);
+
+}
+#submitbtn{
+    background-color: rgb(226, 167, 90);
+    font-weight: 600;
+    color: white;
+    box-shadow: 0px 0px 15px rgb(226, 167, 90);
+}
+label{
+    font-size: 17px;
+}

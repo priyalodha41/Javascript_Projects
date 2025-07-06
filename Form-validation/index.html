@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validation</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+</head>
+<body>
+
+        <div class="validation">
+        <form action="" id="form" class="ms-2 ms-md-0 me-2 me-md-0">
+            <div class="container">
+                <h2 class="text-center mb-3 fw-semibold">Form Validation</h2>
+                <div class="row px-md-0 px-4">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username :</label>
+                                <input type="text" class="form-control" id="username" name="Name : "required>
+                            </div> 
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address:</label>
+                                <input type="email" class="form-control" id="email" name="Email : " placeholder="name@example.com">
+                            </div>
+                        </div>    
+                        <div class="col-md-6">
+                            <div class="mb-4">
+                                <label for="pass" class="form-label">Password:</label>
+                            <input type="password" id="pass" class="form-control" required>
+                            </div>
+                        </div>  
+                        <div class="col-md-6">
+                                <div class="mb-3">
+                                <label for="cpass" class="form-label">Confirm Password:</label>
+                                <input type="password" id="cpass" class="form-control" required>
+                                </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="selectOption">Select your Course:</label>
+                                <select class="form-select mt-1" id="selectOption" name="Selected_Option" required>
+                                    <option selected disabled value="">Open this select menu</option>
+                                    <option value="1">Full-Stack Development</option>
+                                    <option value="2">UI/UX</option>
+                                    <option value="3">AI/ML</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-0">
+                            <label class="mb-2">Gender:</label><br>
+                            
+                                <input class="form-check-input" type="radio" name="gender" id="gender-male" value="male">
+                                <label class="form-check-label ms-2" for="gender-male">Male</label>
+
+                                <input class="form-check-input ms-3" type="radio" name="gender" id="gender-female" value="female">
+                                <label class="form-check-label ms-2" for="gender-female">Female</label>
+
+                            </div>
+                        </div>
+                </div>
+                <div class="text-center">
+                    <button class="btn mt-4" id="submitbtn">Submit</button>
+                </div>
+            </div>
+        </form>
+        </div>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+
+        $(document).ready(function(){
+
+            let nameElement= document.getElementById("username");
+            let passElement= document.getElementById("pass");
+            let cpassElement= document.getElementById("cpass");
+            let emailElement= document.getElementById("email");
+            let formelement=document.getElementById("form");
+            let selectElement = document.getElementById("selectOption");
+            $("#submitbtn").on("click",function(e){
+                e.preventDefault();
+                
+                let name=nameElement.value;
+                let pass=passElement.value;
+                let cpass=cpassElement.value;
+                let email=emailElement.value;   
+                let select=selectElement.value;
+                let gender = document.querySelector('input[name="gender"]:checked');
+
+                if(name.trim()==""){
+                    Swal.fire("Enter a proper name");
+                    return;
+                }
+
+                let regex=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+                if(!regex.test(email)){
+                     Swal.fire("Enter a proper formatted email");
+                     return;
+                }
+
+               if(pass.trim().length<8){
+                     Swal.fire("Enter a 8 long characters!");
+                     return;
+               }
+               if(pass.trim()!=cpass.trim()){
+                    Swal.fire("Confirm password is not same as password!!!");
+                    return;
+               }
+
+               if(select==""){
+                    Swal.fire("Please select a valid option from the dropdown");
+                    return;
+               }
+
+                if (!gender) {
+                    Swal.fire("Please select your gender");
+                    return;
+                }
+               form.submit();
+            })  
+        })
+    </script>
+</body>
+</html>
