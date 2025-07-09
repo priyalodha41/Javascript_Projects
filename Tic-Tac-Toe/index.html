@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="./assets/style/style.css">
+</head>
+<body>
+
+    <div class="board">
+        <button class="cell" id="bt1"></button>
+        <button class="cell" id="bt2"></button>
+        <button class="cell" id="bt3"></button>
+        <button class="cell" id="bt4"></button>
+        <button class="cell" id="bt5"></button>
+        <button class="cell" id="bt6"></button>
+        <button class="cell" id="bt7"></button>
+        <button class="cell" id="bt8"></button>
+        <button class="cell" id="bt9"></button>
+    </div>
+
+
+    
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+
+
+
+    <script>
+
+        let count=0;
+
+        function boxreset(){
+            count=0;
+            for(let i=1; i<=9; i++){
+                document.getElementById(`bt${i}`).innerHTML="";
+            }
+        }
+
+        function shoot() {
+        confetti({
+            ...defaults,
+            particleCount: 30,
+            scalar: 1.2,
+            shapes: ["circle", "square"],
+            colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"],
+        });
+
+        confetti({
+            ...defaults,
+            particleCount: 20,
+            scalar: 2,
+            shapes: ["emoji"],
+            shapeOptions: {
+            emoji: {
+                value: ["🦄", "🌈"],
+            },
+            },
+        });
+        }
+
+        setTimeout(shoot, 0);
+        setTimeout(shoot, 100);
+        setTimeout(shoot, 200);
+
+        
+        function alert(symbol){
+                Swal.fire({
+                title: `Winner of the game is: ${symbol}`,
+                icon: "success",
+            });
+            confetti();
+            boxreset();
+        }
+        function checkWin(symbol){
+
+            //Checking for the first row
+
+            let flag=true;
+            for(let i=1; i<=3; i++){
+                let val=document.getElementById(`bt${i}`).innerHTML;
+
+                if(val!=symbol){
+                    flag=false;
+                    break;
+                }
+            }
+            if(flag){
+                alert(symbol);
+                return true;
+            }
+
+            //Checking for the second row
+
+             flag=true;
+            for(let i=4; i<=6; i++){
+                let val=document.getElementById(`bt${i}`).innerHTML;
+
+                if(val!=symbol){
+                    flag=false;
+                    break;
+                }
+            }
+            if(flag){
+                alert(symbol);
+                return true;
+            }
+
+            //Checking for the third row
+
+            flag=true;
+            for(let i=6; i<=9; i++){
+                let val=document.getElementById(`bt${i}`).innerHTML;
+
+                if(val!=symbol){
+                    flag=false;
+                    break;
+                }
+            }
+            if(flag){
+                alert(symbol);
+                return true;
+            }
+
+            //Checking for the first column
+
+            flag=true;
+            for(let i=1; i<=7; i+=3){
+                let val=document.getElementById(`bt${i}`).innerHTML;
+
+                if(val!=symbol){
+                    flag=false;
+                    break;
+                }
+            }
+            if(flag){
+                alert(symbol);
+                return true;
+            }
+
+            //Checking for the second column
+
+            flag=true;
+            for(let i=2; i<=8; i+=3){
+                let val=document.getElementById(`bt${i}`).innerHTML;
+
+                if(val!=symbol){
+                    flag=false;
+                    break;
+                }
+            }
+            if(flag){
+                alert(symbol);
+                return true;
+            }
+
+            //Checking for the third column
+
+            flag=true;
+            for(let i=3; i<=9; i+=3){
+                let val=document.getElementById(`bt${i}`).innerHTML;
+
+                if(val!=symbol){
+                    flag=false;
+                    break;
+                }
+            }
+            if(flag){
+                alert(symbol);
+                return true;
+            }
+
+            //Checking for the first diagonal
+
+            flag=true;
+            for(let i=1; i<=9; i+=4){
+                let val=document.getElementById(`bt${i}`).innerHTML;
+
+                if(val!=symbol){
+                    flag=false;
+                    break;
+                }
+            }
+            if(flag){
+                alert(symbol);
+                return true;
+            }
+
+            //Checking for the second diagonal
+
+            flag=true;
+            for(let i=3; i<=7; i+=2){
+                let val=document.getElementById(`bt${i}`).innerHTML;
+
+                if(val!=symbol){
+                    flag=false;
+                    break;
+                }
+            }
+            if(flag){
+                alert(symbol);
+                return true;
+            }
+
+
+            return false;
+        }
+        $(document).ready(function(){
+            $(".cell").on("click",function(e){
+
+                // let cell=e.target
+                let cell=this;
+
+                if(cell.innerHTML==""){
+
+                    if(count%2==0){
+                        cell.innerHTML="X";
+                    }
+                    else{
+                        cell.innerHTML="O";
+                    }
+                    count++;
+                }
+                else{
+                    Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Click another box, as it is already clicked!!",
+                    });
+                }
+
+                if(count>=5){
+                    const win=checkWin(cell.innerHTML);
+
+                    if(count==9){
+                        if(win==false){
+                          Swal.fire({
+                            title: "Game is a Draw"
+                            });
+                        }
+                        boxreset();
+                    }
+                }
+            })
+
+        })
+
+    </script>
+</body>
+</html>
