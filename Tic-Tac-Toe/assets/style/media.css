@@ -1,0 +1,41 @@
+
+@media(max-width: 768px) {
+  .board {
+    width: 360px;
+    height: 360px;
+    gap: 6px;
+  }
+
+  .cell {
+    width: 110px;
+    height: 110px;
+    font-size: 30px;
+  }
+}
+@media(max-width: 480px) {
+  .board {
+    width: 300px;
+    height: 300px;
+    gap: 5px;
+  }
+
+  .cell {
+    width: 95px;
+    height: 95px;
+    font-size: 26px;
+  }
+}
+
+@media(max-width: 320px) {
+  .board {
+    width: 270px;
+    height: 270px;
+    gap: 4px;
+  }
+
+  .cell {
+    width: 85px;
+    height: 85px;
+    font-size: 22px;
+  }
+}

@@ -1,0 +1,35 @@
+@media (max-width: 768px) {
+  .main-box {
+    padding: 20px;
+    width: 90%;
+  }
+
+  input, button {
+    font-size: 16px;
+    padding: 10px 12px;
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .main-box {
+    padding: 15px;
+    width: 95%;
+  }
+
+  input, button {
+    font-size: 15px;
+    padding: 9px 11px;
+  }
+}
+
+@media (max-width: 320px) {
+  .main-box {
+    padding: 12px;
+    width: 98%;
+  }
+
+  input, button {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+}
