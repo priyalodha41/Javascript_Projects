@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions</title>
+
+
+       <link rel="stylesheet" href="/Multi-Ques/assets/css/style.css">
+</head>
+<body>
+    
+    
+    <div class="card">
+        <label for="str1">Enter the string-1:</label>
+        <input type="text" id="str1">
+        <br>
+        <br>
+        <label for="str2">Enter the string-2:</label>
+        <input type="text" id="str2">
+        <br>
+        <button id="btn" class="btn-grad">Click me</button>
+        <button id="clear" class="btn-grad">Clear</button>
+        <br><br>
+        <h1 id="detail" class="output-box"></h1>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+            let content=document.getElementById("detail");
+
+            $("#btn").on("click",function(){
+                let str1=document.getElementById("str1").value.toLowerCase(); 
+                let str2=document.getElementById("str2").value.toLowerCase();
+            
+                let str1content=str1.split("").sort().join("");
+                let str2content=str2.split("").sort().join("");
+
+                if (str1 === ""|| str2==="") {
+                    content.innerHTML = "Please enter a proper string.";
+                } 
+                else if(str1content===str2content){
+                    content.innerHTML=`Strings is an Anagram`;
+                }
+                else{
+                     content.innerHTML=`Strings is not a Anagram`;
+                }
+            })
+
+             $("#clear").on("click",function(){
+
+                content.innerHTML="";
+                document.getElementById("str1").value="";
+                document.getElementById("str2").value="";
+            })
+        })
+    </script>
+</body>
+</html>

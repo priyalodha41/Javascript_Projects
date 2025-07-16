@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+
+* {
+   font-family: "Michroma", sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(to top, #fffaf6 0%, #d6f1fc 100%);
+}
+.card{
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+   background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+}
+
+input{
+    padding: 0.5rem;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 70%;
+      margin-top: 18px;
+}
+input:focus{
+    outline: none;
+}
+label{
+      color:burlywood;
+      font-weight:bold;
+      font-size: 18px;
+}
+
+
+
+.btn-grad {
+    background-image: linear-gradient(to right, #83a4d4 0%, #b6fbff  51%, #83a4d4  100%);
+    margin-top: 30px;
+    padding: 10px 30px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color:white;            
+    font-weight: 600;
+    box-shadow: 0 0 20px #eee;
+    border:none;
+    border-radius: 10px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.btn-grad:hover {
+background-position: right center; /* change the direction of the change here */
+color: #fff;
+}
+
+        
+.output-box {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color:burlywood;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions</title>
+<link rel="stylesheet" href="/Multi-Ques/assets/css/style.css">
+</head>
+<body>
+    
+    
+  <div class="card">
+        <label for="str1">Enter comma separated values:</label>
+        <input type="text" id="str1">
+        <br><br>
+        <button id="btn" class="btn-grad">Click me</button>
+        <button id="clear" class="btn-grad">Clear</button>
+        <br> <br>
+        <h1 id="detail" class="output-box"></h1>
+  </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js"></script>
+    <script>
+        
+        $(document).ready(function(){
+            
+
+            let content=document.getElementById("detail");
+
+            $("#btn").on("click",function(){
+                let str=document.getElementById("str1").value; 
+                
+
+                if (str === "") {
+                    content.innerHTML = "Please enter proper numbers.";
+                    return;
+                }
+                let arr=str.split(",").map(Number);
+                let prime=[];
+                
+                console.log(arr);
+
+                
+                for(let i=0; i<arr.length; i++){
+
+                    if(arr[i]>1){
+
+                        let isPrime=true;
+
+                        for(let j=2; j<Math.sqrt(arr[i]); j++){
+    
+                            if(arr[i]%j==0){
+                                isPrime=false;
+                                break;
+                            }
+                        }
+                        if(isPrime){
+        
+                            prime.push(arr[i]);
+                        }
+                    }
+
+                }
+
+                content.innerHTML=`Prime numbers in the array are: ${prime}`;
+
+                
+                    
+            })
+            $("#clear").on("click",function(){
+
+                content.innerHTML="";
+                document.getElementById("str1").value="";
+        })
+        })
+    </script>
+</body>
+</html>

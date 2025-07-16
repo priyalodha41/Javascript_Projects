@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions</title>
+
+      <link rel="stylesheet" href="/Multi-Ques/assets/css/style.css">
+</head>
+<body>
+    
+    <div class="card">
+        
+        <label for="str1">Enter the string:</label>
+        <input type="text" id="str1">
+        <br><br>
+        <button id="btn" class="btn-grad">Click me</button>
+         <button id="clear" class="btn-grad">Clear</button>
+        <br> <br>
+        <h1 id="detail" class="output-box"></h1>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+            let content=document.getElementById("detail");
+
+            $("#btn").on("click",function(){
+                let str=document.getElementById("str1").value; 
+                
+                if (str === "") {
+                    content.innerHTML = "Please enter a proper string.";
+                } 
+                else{
+                    content.innerHTML=str.toLowerCase();
+                }
+            })
+
+            $("#clear").on("click",function(){
+
+                content.innerHTML="";
+                document.getElementById("str1").value="";
+            })
+        })
+    </script>
+</body>
+</html>

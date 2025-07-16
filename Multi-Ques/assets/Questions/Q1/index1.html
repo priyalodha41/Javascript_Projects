@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions</title>
+    <link rel="stylesheet" href="/Multi-Ques/assets/css/style.css">
+</head>
+<body>
+    
+    
+   <div class="card">
+        <label for="palin">Enter a String :</label>
+        <input type="text" id="palin" placeholder="Enter a string">
+        <button id="btn" class="btn-grad">Click me</button>
+        <button id="clear" class="btn-grad">Clear</button>
+        <h1 id="detail" class="output-box"></h1>
+   </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js"></script>
+    <script>
+
+        $(document).ready(function(){
+            
+            let content=document.getElementById("detail");
+            $("#btn").on("click",function(){
+                
+                let str=document.getElementById("palin").value.trim().toLowerCase();
+    
+                if (str === "") {
+                    content.innerHTML = "Please enter a proper string.";
+                } 
+                else if (str.split("").reverse().join("") === str) {
+                    content.innerHTML = `String "${str}" is a Palindrome.`;
+                } else {
+                    content.innerHTML = `String "${str}" is not a Palindrome.`;
+                }
+
+                
+                
+            })
+
+            $("#clear").on("click",function(){
+
+                content.innerHTML="";
+                document.getElementById("palin").value="";
+            })
+        })
+    </script>
+</body>
+</html>
