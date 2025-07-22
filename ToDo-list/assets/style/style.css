@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Luckiest+Guy&display=swap');
+
+body{
+background-image: radial-gradient( circle farthest-corner at 50.2% 50.7%,  rgba(241,168,179,1) 0%, rgba(254,246,233,1) 90% );
+}
+body,html{
+  width: 100%;
+  height: 100%;
+}
+.page-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.input-box{
+  background-color: #f1f1f1;
+  border-radius: 30px;
+  padding: 5px;
+  width: fit-content;
+  height: 40px;
+  padding-right: 0px;
+  font-family: "Caveat", cursive;
+  font-size: 20px;
+}
+.input-box input {
+  border: none;
+  background: transparent;
+  padding: 10px;
+  outline: none;
+  width: 250px;
+}
+
+.input-box button {
+  background-color:#e47195;
+  color: white;
+  border: none;
+  padding: 7px 42px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.input-box button:hover {
+  background-color: #ec638e;
+}
+#alert-box{
+    color:#e62562;
+}
+.box h3{
+    font-family: "Luckiest Guy", cursive;
+}
+
+.box{
+    background-color: white;
+    padding:30px;
+    width:100%;
+    border-radius: 20px;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #f1f1f1 inset !important;
+  -webkit-text-fill-color: black !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.task-content{
+  background-color: white;
+   background-color: #f1f1f1;
+  padding: 5px 15px;
+  font-family: "Caveat", cursive;
+  margin-top: 15px;
+  font-size: 20px;
+  border-radius: 12px;
+}
+.task-content p{
+  margin-bottom: 0px;
+}
+.task-content button:focus,.task-content button:active{
+  outline:none;
+  border: none;
+}

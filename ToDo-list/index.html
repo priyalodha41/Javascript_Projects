@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <!-- Remix icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="./assets/style/bootstrap.css">
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <link rel="stylesheet" href="./assets/style/media.css">
+</head>
+
+<body>
+    
+    <div class="page-center">
+           
+    <form action="">
+            <div>
+                <div class="box">
+                    <h3 class="mb-4">To Do List <span class="ms-2"><img src="./assets/images/to-do-list.png" alt="" width="43px"></span></h3>
+                    <div class="input-box d-flex align-items-center">
+                        <input class="form-check-input" id="task" type="text" placeholder="Add Your Task">
+                        <select class="form-select" id="priority" required>
+                        <option selected>Select your task priority</option>
+                            <option value="1">High</option>
+                            <option value="2">Medium</option>
+                            <option value="3">Low</option>
+                        </select>
+                        <button id="addtask">Add</button>
+                    </div>
+
+                    <div id="task-box">
+                    </div>
+                    <div id="alert-box" class=" mb-3 mt-2" style="display: none;">
+                        <i class="ri-error-warning-line"></i>
+                        <span id="alert-text"></span>
+                    </div>
+                </div>
+
+
+            </div>
+    </form>
+    </div>
+
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(()=>{
+
+            let taskList=[]
+            function getpriority(id){
+
+                switch(id){
+
+                    case "1":
+                        return `<span class="badge text-bg-danger">High</span>`;
+                    
+                    case "2":
+                         return `<span class="badge text-bg-secondary">Medium</span>`;
+                    case "3":
+                          return `<span class="badge text-bg-warning">Low</span>`;
+                }
+            }
+            $("#addtask").click((e)=>{
+                e.preventDefault();
+                let inputvalue=document.getElementById("task").value;
+                let priority=document.getElementById("priority").value;
+                let alertBox = document.getElementById("alert-box");
+                let alertText = document.getElementById("alert-text");
+
+
+                if (inputvalue === "" || priority === "" || priority === "Select your task priority") {
+                    alertBox.style.display = "flex";
+                    alertText.textContent = "Please fill in all the fields before adding the task.";
+                return;
+                }
+                else {
+                    alertBox.style.display = "none";
+                    alertText.textContent = "";
+                }
+                let date=new Date();
+
+                let TaskObj={
+
+                    id:Date.now(),
+                    Task:inputvalue,
+                    priority:priority,
+                }
+
+
+                taskList.push(TaskObj);
+                document.getElementById("task-box").innerHTML="";
+                
+
+                taskList.forEach((data,indx)=>{
+                    document.getElementById("task-box").innerHTML+=
+                    `<div class="task-content d-flex align-items-center justify-content-between">
+                         <p>${indx+1}. ${data.Task}  ${getpriority(data.priority)}</p>
+                          <button type="button" class="btn close-btn" data-id="${data.id}"><i class="ri-close-large-fill"></i></button>
+                    </div>`
+
+                })
+
+
+                document.getElementById("priority").value="Select your task priority";
+                document.getElementById("task").value="";
+            })
+
+            $("#task-box").on("click", ".close-btn", function () {
+                const idToDelete = $(this).data("id");
+                taskList = taskList.filter(TaskObj => TaskObj.id !== idToDelete);
+
+                document.getElementById("task-box").innerHTML = "";
+                taskList.forEach((data, indx) => {
+                document.getElementById("task-box").innerHTML +=
+                `<div class="task-content d-flex align-items-center justify-content-between">
+                    <p>${indx + 1}. ${data.Task} ${getpriority(data.priority)}</p>
+                    <button type="button" class="btn close-btn" data-id="${data.id}"><i class="ri-close-large-fill"></i></button>
+                </div>`;
+                });
+            });
+
+        })
+
+    </script>
+</body>
+</html>

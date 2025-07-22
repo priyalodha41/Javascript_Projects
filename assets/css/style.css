@@ -6,9 +6,9 @@
   text-decoration: none;
   list-style: none;
 }
-body,html{
-  height: 100%;
-  overflow: hidden;
+body, html {
+  min-height: 100%;
+  overflow-x: hidden;
 }
 body {
   font-family: 'Poppins', sans-serif;
