@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/style/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <link rel="stylesheet" href="./assets/style/media.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="box">
+            <div class="d-flex justify-content-center gap-2 mb-4">
+                <h2 class="d-flex justify-content-center fs-1">TIMER</h2>
+                <img src="./assets/images/timer.png" alt="" width="40px" height="40px">
+            </div>
+            <div class="input-box d-flex gap-3 mt-3">
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" id="hour" placeholder="Hours" min="0" max="23">
+                </div>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" id="min" placeholder="Minutes"  max="0" min="59">
+                </div>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" id="sec" placeholder="Seconds" max="0" min="59">
+                </div>
+            </div>
+            <div class="timer-btns d-flex gap-sm-3 justify-content-center mt-3">
+                <button class="btn " id="start">Start</button>
+                <button class="btn " id="resume">Resume</button>
+                <button class="btn" id="stop">Stop</button>
+                <button class="btn " id="reset">Reset</button>
+            </div>
+
+            <audio id="startAudio" src="./assets/audio/a-kitchen-timer-55420.mp3" loop></audio>
+            <audio id="finishAudio" src="./assets/audio/mixkit-score-casino-counter-1998.wav" ></audio>
+        </div>
+    </div>
+
+
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+     <script src="./assets/js/bootstrap.js"></script>
+     <script>
+
+        let start= document.getElementById("start");
+        let stop=document.getElementById("stop");
+        let reset=document.getElementById("reset");
+        let resume=document.getElementById("resume");
+
+        let hour=document.getElementById("hour") ;
+        let min=document.getElementById("min");
+        let sec=document.getElementById("sec");
+
+
+        let startAudio = document.getElementById("startAudio");
+        let finishAudio = document.getElementById("finishAudio");
+        
+        let timerInterval;
+        let totalSeconds
+        
+        function showtimer(){
+
+            
+            if(!timerInterval){
+                      totalSeconds = (parseInt(hour.value) || 0) * 3600 +
+                        (parseInt(min.value) || 0) * 60 +
+                        (parseInt(sec.value) || 0);
+
+
+               if(totalSeconds > 0){  
+                    startTimer();
+                    startAudio.play();
+        }
+            }
+        }
+        let timerFinished = false;
+        function startTimer(){
+            timerInterval = setInterval(() => {
+                if(totalSeconds > 0){
+                    totalSeconds--;
+
+                    let temp= totalSeconds
+                    let hours=parseInt(temp/3600);
+                    temp=temp%3600;
+
+                    let mins=parseInt(temp/60);
+                    temp=temp%60;
+
+                    let seconds=parseInt(temp);
+
+
+                    hour.value=hours.toString().padStart(2,"0");
+                    min.value=mins.toString().padStart(2,"0");
+                    sec.value=seconds.toString().padStart(2,"0");
+                }  
+                else{
+                    clearInterval(timerInterval);
+                    timerInterval = null; 
+
+                    startAudio.pause();
+                    startAudio.currentTime = 0;
+                     timerFinished = true;
+                }
+                if(timerFinished){
+                    finishAudio.play();
+                    setTimeout(() => {
+                    finishAudio.pause();
+                      finishAudio.currentTime = 0;
+                    }, 2000); 
+       
+                    timerFinished=false;
+                }
+                }, 
+                1000);
+         }
+         start.addEventListener("click", showtimer);
+
+         function resetbtn(){
+
+            clearInterval(timerInterval);
+             hour.value="";
+             min.value="";
+             sec.value="";
+             startAudio.pause();
+            finishAudio.pause();
+
+         }
+
+        reset.addEventListener("click", resetbtn);
+
+
+        function stopbtn(){
+            clearInterval(timerInterval);
+            timerInterval = null; 
+            startAudio.pause();
+            startAudio.currentTime = 0;
+        }
+
+        stop.addEventListener("click",stopbtn);
+
+
+        function resumebtn(){
+
+            if(!timerInterval && totalSeconds>0){
+
+                startTimer();
+                startAudio.play();
+            }
+        }
+
+        resume.addEventListener("click",resumebtn);
+
+     </script>
+</body>
+</html>

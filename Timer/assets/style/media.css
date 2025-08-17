@@ -1,0 +1,20 @@
+@media (max-width: 500px) {
+    .box {
+        width: 90%;          
+        padding: 20px;       
+    }
+
+    .timer-btns .btn {
+        font-size: 12px;     
+        padding: 4px 10px;
+        margin-left: 10px;
+    }
+
+    .box h2 {
+        font-size: 24px;     
+    }
+    .box img{
+        width: 28px;
+        height: 28px;
+    }
+}
