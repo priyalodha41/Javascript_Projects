@@ -40,10 +40,10 @@ const counter= document.getElementById("count");
 function UpdateCount(){
     counter.innerHTML=cart.length;
 }
-
 if (cart.length === 0) {
     totalcart.innerHTML = `<p class="pb-0 mb-0" style="font-size: 17px;">Your cart is empty.</p>`;
 }
+
 
 function renderCart() {
 
