@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="./assets/style/bootstrap-min.css">
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <link rel="stylesheet" href="./assets/style/media.css">
+
+</head>
+<body>
+    
+    <header>
+        
+    <div class="upper-head display justify-content-center">
+        <p class=" mb-0">
+            Free express international delivery - OFF 50%! <a href="javascript:void(0);" class="text-white"><strong>Shop now</strong></a></p>
+    </div>
+
+    <div class="middle-head">
+        <div class="container">
+            <div class="row display">
+                    <div class="col-6 head-left" >
+                        <div class="mid-head-left">
+                            <p class="mb-0">
+                                Register now and get an extra 20% off using the code <a href="https://themewar.com/wp/nivex/main">Nivex</a>.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="mid-head-right display justify-content-end">
+                                <div class="order"><p class="mb-0">Order Tracking</p></div>
+                                <div class="language">
+
+                                    <ul>
+                                        <li class="main-item"><span>English <i class="ri-arrow-down-s-line"></i></span>
+                                            <ul class="sub-menu">
+                                                <li>French</li>
+                                                <li>Spanish</li>
+                                                <li>Dutch</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                               <div class="currency">
+
+                                    <ul>
+                                        <li class="main-item"><span>USD <i class="ri-arrow-down-s-line"></i></span>
+                                            <ul class="sub-menu-currency">
+                                                <li>EUR</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                        </div>
+                    </div>
+            </div>
+    </div>
+    </div>
+    
+    <div class="lower-head">
+        <div class="container">
+            <div class="row display">
+                <div class="col-7">
+                    <div class="display">
+                        <div> 
+                            <a href="./index.html"> <img src="./assets/images/Logo-3.png" alt=""></a>
+                        </div>
+                        <div class="lower-head-left">
+                            <ul class="display">
+                                <li>Home<i class="ri-arrow-down-s-line"></i></li>
+                                <li>About Us</li>
+                                <li>Shop<i class="ri-arrow-down-s-line"></i></li>
+                                <li>Blog<i class="ri-arrow-down-s-line"></i></li>
+                                <li>Pages<i class="ri-arrow-down-s-line"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div class="lower-head-right ">
+                        <ul class="d-flex justify-content-end align-items-center gap-4">
+                            <li><i class="ri-search-line"></i></li>
+                            <li><i class="ri-user-line"></i></li>
+                            <li>
+                                <div class="position-relative">
+                                    <i class="ri-shopping-basket-2-fill"></i>
+                                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark " id="count">
+                                        0
+                                        <span class="visually-hidden">unread messages</span>
+                                    </span>
+                                </div>
+
+                                <div class="total-cart" id="view-cart">
+                                </div>
+                                </li>
+                            <li><i class="ri-heart-line"></i></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    </header>
+    <main>
+        <section class="banner position-relative">
+            <div class="container">
+                <div class="row display">  
+                    <div class="col-6">
+                        <div>
+                            <span class="price">Intro Price: <strong>50% OFF</strong></span>
+                            <br>
+                            <span class="heading mt-3 d-block">Dashing <br> cocktail dresses</span>
+
+                            <button class="btn mt-4"><i class="ri-arrow-right-s-line pe-1"></i>Shop Now</button>
+                        </div>
+                        <h1>Fashion</h1>
+                    </div>
+                    
+                    <div class="col-6">
+                       <div class="position-relative">
+                           <img src="" alt="" class="circle">
+                             <img src="./assets/images/banner-img.webp" alt="">
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="cart">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="text-center position-relative">
+                            <h5 class="fw-bold">Featured</h5>
+                            <h2>Hand-Picked <strong> Product</strong></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="container">
+                <div class="row gy-xl-0 gy-3" id="product-row">
+                
+                </div>
+            </div>
+        </section>
+        <section class="women">
+            <div class="row g-0">
+                
+                <!-- Men section -->
+                <div class="col-xl-6 position-relative fashion-img">
+                <img src="./assets/images/men-fashon-bg.jpg" alt="Men Fashion" class="img-fluid w-100 h-80">
+                <div class="men">
+                    <h2>MEN</h2>
+                    <span class="stroke-text"><img src="./assets/images/fashon-greading-text.png" alt=""></span>
+                </div>
+                </div>
+
+                <!-- Women section -->
+                <div class="col-xl-6 position-relative fashion-img">
+                <img src="./assets/images/women-fashon-bg.jpg" alt="Women Fashion" class="img-fluid w-100 h-80">
+                <h2 class="stroke-women">WOMEN</h2>
+                </div>
+
+            </div>
+
+        </section>
+        <section class="testimonial position-relative">
+            <div class="container">
+                <div class="position-absolute quoted">
+                    <img src="./assets/images/quote-white.svg" alt="">
+                </div>
+                <div class="text-center position-relative">
+                    <h5>Testimonials</h5>
+                     <h2>happy users says <strong>about us </strong></h2>
+                </div>
+
+                <div class="swiper mySwiper position-relative  testimonial-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide text-center">
+                            <div>
+                                <div><img src="./assets/images/quote.png" alt=""></div>
+                            </div>
+                            <div class="slider-content">
+                                “With a strategy in place including research on who you’re targeting, what keywords to use, which topics to cover, and how often/where to post content, you’ll differentiate yourself from the run-of-the-mill brands posting forgettable blogs.” 
+                            </div>
+                            <div class="display justify-content-center gap-2 author-detail">
+                                <img decoding="async" src="./assets/images/testimonial-author-4-80x80.jpg" alt="Nelson Melson">
+                                <div class="text-start ms-2">
+                                     <h3>Andrew D. Smith</h3>
+                                    <p class="m-0">Manager</p>
+                                </div>
+                            </div>
+                        </div>
+
+                          <div class="swiper-slide text-center">
+                            <div>
+                                <div><img src="./assets/images/quote.png" alt=""></div>
+                            </div>
+                            <div class="slider-content">
+                                “With a strategy in place including research on who you’re targeting, what keywords to use, which topics to cover, and how often/where to post content, you’ll differentiate yourself from the run-of-the-mill brands posting forgettable blogs.” 
+                            </div>
+                            <div class="display justify-content-center gap-2 author-detail">
+                                <img decoding="async" src="./assets/images/testimonial-author-5-80x80.jpg" alt="Nelson Melson">
+                                <div class="text-start ms-2">
+                                     <h3>Nelson Melson</h3>
+                                    <p class="m-0">head of idea</p>
+                                </div>
+                            </div>
+                        </div>
+
+                </div>
+                    <div class="swiper-button-prev">
+                        <i class="ri-arrow-left-long-line"></i>
+                    </div>
+                    <div class="swiper-button-next">
+                        <i class="ri-arrow-right-long-line"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="deal">
+            <div class="container">
+                <div class="row display">
+                    <div class="col-xl-6">
+                        <div>
+                            <img src="./assets/images/news-latter-bg.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="deal-content">
+                            <h5 class="week fw-semibold">Deal of the week</h5>
+                            <h2 class="shirt"><strong>Roland grand</strong> white short
+                                checkered <strong> t-shirt</strong></h2>
+                            <p>Classic beauties L/S Knock knock sweat Classic beauties L/S Knock knock sweat Classic beauties.</p>
+
+                            <div class="email display">
+                                <div class="display">
+                                     <i class="ri-mail-open-fill"></i>
+                                    <input type="email" placeholder="Your email address" class="form-control">
+                                </div>
+                                 <button class="btn me-sm-2"><i class="ri-arrow-right-s-line pe-1"></i>Subscribe</button>
+                            </div>
+
+                            <div class="mt-5 time-offer">
+                                <p class="mb-0">Limited time offer. The deal will expires on <mark style="background: #000; color: #fff;">November 11,2024</mark> HURRY UP!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="discount">
+                    <p style="text-align: center;" class="p-0 m-0">Super discount for your first purchase. <mark style="background: #E5EFF3; padding: 0 4.5px;"><strong>Free15first</strong></mark> Use discount cod in checkout!</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="upper-footer">
+            <div class="container">
+                <div class="row display">
+                    <div class="col-5 d-none d-lg-block">
+                        <div class="divider">
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="text-center">
+                            <a href="./index.html"><img src="./assets/images/Logo-3.png" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-5 d-none d-lg-block">
+                        <div class="divider">
+                        </div>
+                    </div>
+            </div>
+
+        </div>
+        </div>
+
+        <div class="middle-footer">
+            <div class="container">
+                <div class="row gy-md-0 gy-3">
+                    <div class="col-xl-4 col-md-6">
+                        <div>
+                            <ul class="menu display flex-column gap-4">
+                                <li>About Us</li>
+                                <li>Privacy Policy</li>
+                                <li>Terms & Conditions</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6">
+                        <div class="display flex-column">
+                            <div>
+                                <ul class="display justify-content-center gap-3 icons">
+                                    <li><i class="ri-facebook-line"></i></li>
+                                    <li><i class="ri-twitter-x-line"></i></li>
+                                    <li><i class="ri-behance-line"></i></li>
+                                    <li><i class="ri-youtube-fill"></i></li>
+                                    <li><i class="ri-linkedin-line"></i></li>
+                                 </ul>
+                            </div>
+                                <div class="divider">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6">
+                        <div>
+                             <ul class="menu  display flex-column gap-4">
+                                <li>Shopping info</li>
+                                <li>Returns / Exchanges</li>
+                                <li>Contact Us</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lower-footer text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                       <div>
+                             <h2>Weekly <strong>Newsletter</strong></h2>
+                       </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="display justify-content-center mt-3 mb-5 email">
+                            <input type="email" placeholder="Your email address" class="form-control">
+                            <button class="btn me-2"><i class="ri-arrow-right-s-line pe-1"></i>Subscribe</button>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div>
+                            <p class="m-0 p-0">Copyright &amp; design by <a href="javascript:void(0);"><strong>Nivex.</strong></a> All rights reserved - 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assets/Js/script.js"></script>
+
+    <script>
+       var swiper = new Swiper(".mySwiper", {
+            loop: true,  
+            autoplay: {
+                delay: 2000,    
+                disableOnInteraction: false, 
+            },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+
+        window.addEventListener('scroll', function() {
+            const lowerHead = document.querySelector('.lower-head');
+
+            if (window.scrollY >= 600) {
+                lowerHead.classList.add('fixed');
+            } else {
+                lowerHead.classList.remove('fixed');
+            }
+        });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="./assets/style/bootstrap-min.css">
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <link rel="stylesheet" href="./assets/style/media.css">
+</head>
+<body>
+     <header class="position-relative z-3">
+        
+    <div class="upper-head display justify-content-center">
+        <p class=" mb-0">
+            Free express international delivery - OFF 50%! <a href="javascript:void(0);" class="text-white"><strong>Shop now</strong></a></p>
+    </div>
+
+    <div class="middle-head">
+        <div class="container">
+            <div class="row display">
+                    <div class="col-6 head-left" >
+                        <div class="mid-head-left">
+                            <p class="mb-0">
+                                Register now and get an extra 20% off using the code <a href="https://themewar.com/wp/nivex/main">Nivex</a>.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="mid-head-right display justify-content-end">
+                                <div class="order"><p class="mb-0">Order Tracking</p></div>
+                                <div class="language">
+
+                                    <ul>
+                                        <li class="main-item"><span>English <i class="ri-arrow-down-s-line"></i></span>
+                                            <ul class="sub-menu">
+                                                <li>French</li>
+                                                <li>Spanish</li>
+                                                <li>Dutch</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                               <div class="currency">
+
+                                    <ul>
+                                        <li class="main-item"><span>USD <i class="ri-arrow-down-s-line"></i></span>
+                                            <ul class="sub-menu-currency">
+                                                <li>EUR</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                        </div>
+                    </div>
+            </div>
+    </div>
+    </div>
+    
+    <div class="lower-head">
+        <div class="container">
+            <div class="row display">
+                <div class="col-7">
+                    <div class="display">
+                        <div> 
+                            <a href="./index.html"> <img src="./assets/images/Logo-3.png" alt=""></a>
+                        </div>
+                        <div class="lower-head-left">
+                            <ul class="display">
+                                <li>Home<i class="ri-arrow-down-s-line"></i></li>
+                                <li>About Us</li>
+                                <li>Shop<i class="ri-arrow-down-s-line"></i></li>
+                                <li>Blog<i class="ri-arrow-down-s-line"></i></li>
+                                <li>Pages<i class="ri-arrow-down-s-line"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div class="lower-head-right ">
+                        <ul class="d-flex justify-content-end align-items-center gap-4">
+                            <li><i class="ri-search-line"></i></li>
+                            <li><i class="ri-user-line"></i></li>
+                            <li>
+                                <div class="position-relative">
+                                    <i class="ri-shopping-basket-2-fill"></i>
+                                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark " id="count">
+                                        0
+                                        <span class="visually-hidden">unread messages</span>
+                                    </span>
+                                </div>
+
+                                <div class="total-cart cart-total" id="view-cart">
+                                </div>
+                                </li>
+                            <li><i class="ri-heart-line"></i></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    </header>
+
+
+    <main>
+        <section class="cart-banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                            <div class="text-center position-relative z-3" >
+                                <div class="home-cart">
+                                    <a href="./index.html">Home</a>
+                                    <span>/</span><span class="fw-bolder">Cart</span>
+                                </div>                                        
+                            <h2>Cart</h2>
+                        </div>
+
+                        <div class="cart-circle-1 position-absolute"></div>
+                        <div class="cart-circle-2 position-absolute"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="viewcart">
+            <div class="container">
+                <div class="row gy-2 gx-2">
+                    <div class="col-12">
+                        <div>
+                            <h3 class="fw-bold text-dark">Your Cart Items</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 total-cart-items" id="cart-items">
+                            <div class="row fw-bold border-bottom py-2 cart-head-names" >
+                            <div class="col-5">Product</div>
+                            <div class="col-2">Price</div>
+                            <div class="col-2 text-center">Quantity</div>
+                            <div class="col-2 text-center">Subtotal</div>
+                            <div class="col-1"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="total-amount-box" id="amount-box">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+     <footer class="cart-foot">
+        <div class="upper-footer">
+            <div class="container">
+                <div class="row display">
+                    <div class="col-5 d-none d-lg-block">
+                        <div class="divider">
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="text-center">
+                            <a href="./index.html"><img src="./assets/images/Logo-white-3.png" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-5 d-none d-lg-block">
+                        <div class="divider">
+                        </div>
+                    </div>
+            </div>
+
+        </div>
+        </div>
+
+        <div class="middle-footer">
+            <div class="container">
+                <div class="row gy-md-0 gy-3">
+                    <div class="col-xl-4 col-md-6">
+                        <div>
+                            <ul class="menu display flex-column gap-4">
+                                <li>About Us</li>
+                                <li>Privacy Policy</li>
+                                <li>Terms & Conditions</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6">
+                        <div class="display flex-column">
+                            <div>
+                                <ul class="display justify-content-center gap-3 icons">
+                                    <li><i class="ri-facebook-line"></i></li>
+                                    <li><i class="ri-twitter-x-line"></i></li>
+                                    <li><i class="ri-behance-line"></i></li>
+                                    <li><i class="ri-youtube-fill"></i></li>
+                                    <li><i class="ri-linkedin-line"></i></li>
+                                 </ul>
+                            </div>
+                                <div class="divider">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6">
+                        <div>
+                             <ul class="menu display flex-column gap-4">
+                                <li>Shopping info</li>
+                                <li>Returns / Exchanges</li>
+                                <li>Contact Us</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lower-footer text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                       <div>
+                             <h2>Weekly <strong>Newsletter</strong></h2>
+                       </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="display justify-content-center mt-3 mb-5 email">
+                            <input type="email" placeholder="Your email address" class="form-control">
+                            <button class="btn me-2 text-white"><i class="ri-arrow-right-s-line pe-1"></i>Subscribe</button>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div>
+                            <p class="m-0 p-0 text-white">Copyright &amp; design by <a href="javascript:void(0);"><strong class="text-white">Nivex.</strong></a> All rights reserved - 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./assets/Js/viewcart.js"></script>
+</body>
+</html>
