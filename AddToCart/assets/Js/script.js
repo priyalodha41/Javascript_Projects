@@ -40,7 +40,6 @@ const products=[
         type:"Clothes, Hoodies",
         description:"Horizon Herringbone Pants",
         imageUrl:"./assets/images/download (1).jpeg",
-        
         price:"190.00",
     },
 
@@ -48,8 +47,7 @@ const products=[
         id:7,
         type:"Bags, Fashion",
         description:"Horizon Herringbone Pants",
-        imageUrl:"/assets/images/pd-fashon-11-300x300.jpg",
-        
+        imageUrl:"./assets/images/pd-fashon-11-300x300.jpg",
         price:"91.00",
     },
 
@@ -57,8 +55,7 @@ const products=[
         id:8,
         type:"Clothes, Hoodies",
         description:"Horizon Herringbone Pants",
-        imageUrl:"/assets/images/pd-fashon-13-300x300.jpg",
-        
+        imageUrl:"./assets/images/pd-fashon-13-300x300.jpg",
         price:"170.00",
     },
 
