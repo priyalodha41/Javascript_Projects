@@ -705,3 +705,8 @@ footer{
 .shop:hover{
     background-color:#bfddeb ;
 }
+.product-img {
+    width: 100%;             
+    height: 300px;           
+    object-fit: cover;       
+}
