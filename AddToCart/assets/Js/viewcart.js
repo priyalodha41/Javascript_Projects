@@ -1,3 +1,4 @@
+
 const cart=JSON.parse(localStorage.getItem("cart")) || [];
 
 const counter= document.getElementById("count");
@@ -13,25 +14,26 @@ const carthead=document.getElementById("cart-head");
 
 const viewcart = document.querySelector(".viewcart");
 
-if (cart.length === 0) {
-    viewcart.innerHTML = 
-    `
-    <div class="d-flex flex-column justify-content-center align-items-center text-center p-3" style="min-height: 60vh;">
-    <img src="./assets/images/empty-cart.png" 
-        alt="Empty Cart" 
-        style="max-width: 300px; width: 100%; height: auto; margin-bottom: 15px;">
-    
-    <p class="pb-0 mb-0 fw-semibold text-dark" style="font-size: 20px;">
-        Your cart is empty.
-    </p>
-    </div>
-    `;
-
-}
 
 function renderCart() {
 
     totalcart.innerHTML = ''; 
+
+    if (cart.length === 0) {
+    viewcart.innerHTML = 
+    `
+        <div class="d-flex flex-column justify-content-center align-items-center text-center p-3" style="min-height: 60vh;">
+            <img src="./assets/images/empty-cart.png" 
+                alt="Empty Cart" 
+                style="max-width: 300px; width: 100%; height: auto; margin-bottom: 15px;">
+            
+            <p class="pb-0 mb-0 fw-semibold text-dark" style="font-size: 20px;">
+                Your cart is empty.
+            </p>
+            <a class="shop rounded-2 fw-medium mt-3" href="./index.html">Shop Now</a>
+        </div>
+    `;
+}
 
 
     cart.forEach(product => {
@@ -204,3 +206,4 @@ showMessage = (
         title: msg,
     });
 };
+

@@ -694,3 +694,14 @@ footer{
     width: 100%;
 }
 
+.shop{
+    background-color:#deedf4;
+    color: #000000;
+    font-size: 14px;
+    font-family: var(--primary-font);
+    padding: 8px 20px;
+    transition: all 0.3s linear;
+}
+.shop:hover{
+    background-color:#bfddeb ;
+}

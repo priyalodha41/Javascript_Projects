@@ -27,6 +27,41 @@ const products=[
         imageUrl:"./assets/images/pd-fashon-16-300x400.jpg",
         price:"130.00",
     },
+     {
+        id:5,
+        type:"Clothes, Hoodies",
+        description:"Red Jordans",
+        imageUrl:"./assets/images/pd-fashon-5-300x300.png",
+        price:"239.00",
+    },
+
+     {
+        id:6,
+        type:"Clothes, Hoodies",
+        description:"Horizon Herringbone Pants",
+        imageUrl:"./assets/images/download (1).jpeg",
+        
+        price:"190.00",
+    },
+
+     {
+        id:7,
+        type:"Bags, Fashion",
+        description:"Horizon Herringbone Pants",
+        imageUrl:"/assets/images/pd-fashon-11-300x300.jpg",
+        
+        price:"91.00",
+    },
+
+     {
+        id:8,
+        type:"Clothes, Hoodies",
+        description:"Horizon Herringbone Pants",
+        imageUrl:"/assets/images/pd-fashon-13-300x300.jpg",
+        
+        price:"170.00",
+    },
+
 ]
 
 const productrow=document.getElementById("product-row");
@@ -107,8 +142,14 @@ function addtoCart(productID) {
     UpdateCount();
     renderCart();
 }
-products.forEach((products,idx)=>{
 
+function sortingproducts(){
+
+
+    productrow.innerHTML="";
+
+
+    products.forEach((products,idx)=>{
     productrow.innerHTML+=
     ` <div class="col-xl-3 col-lg-4 col-md-6">
             <div class="product position-relative">
@@ -131,9 +172,23 @@ products.forEach((products,idx)=>{
         </div>
     `
 })
+}
 
+function sortCartAsc() {
+    products.sort((a, b) => parseFloat(a.price) - parseFloat(b.price))
+    sortingproducts();
+}
+
+function sortCartDesc() {
+    products.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
+   sortingproducts();
+}
+
+
+sortingproducts();
 UpdateCount();
 renderCart();
+
 
 
 showMessage = (
@@ -154,3 +209,5 @@ showMessage = (
         title: msg,
     });
 };
+
+
