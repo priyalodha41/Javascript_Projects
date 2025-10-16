@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/style/style.css">
+</head>
+<body>
+
+  <div class="weather-container">
+    <h3 class="mb-3">🌦️ Weather App</h3>
+
+    <div class="search-box">
+      <input type="text" id="city" placeholder="Enter city name..." />
+      <button id="search">🔍</button>
+    </div>
+
+    <p id="message"></p>
+
+    <div class="weather-card" id="weather-card">
+      <h4 id="location"></h4>
+      <p id="local-time" class="text-light small"></p>
+      <img id="icon" width="70" height="70" />
+      <div class="temp" id="temp"></div>
+      <p id="condition"></p>
+
+      <div class="info-grid">
+        <div class="info">🌡️ <strong>Feels:</strong> <span id="feelslike"></span></div>
+        <div class="info">💧 <strong>Humidity:</strong> <span id="humidity"></span></div>
+        <div class="info">🌬️ <strong>Wind:</strong> <span id="wind"></span></div>
+        <div class="info">📈 <strong>Pressure:</strong> <span id="pressure"></span></div>
+        <div class="info">👁️ <strong>Visibility:</strong> <span id="visibility"></span></div>
+        <div class="info">🧭 <strong>Direction:</strong> <span id="winddir"></span></div>
+        <div class="info">☁️ <strong>Clouds:</strong> <span id="cloud"></span></div>
+        <div class="info">🔥 <strong>Heat Index:</strong> <span id="heatindex"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const API_KEY = "573212ae15884d61ae260421250410"; // Replace with your WeatherAPI key
+
+    const searchBtn = document.getElementById("search");
+    const cityInput = document.getElementById("city");
+    const msg = document.getElementById("message");
+    const card = document.getElementById("weather-card");
+
+    async function fetchWeather() {
+      const city = cityInput.value.trim();
+      msg.className = "";
+      msg.innerText = "";
+      card.style.display = "none";
+
+      if (!city) {
+        msg.className = "error";
+        msg.innerText = "⚠️ Please enter a valid city name.";
+        return;
+      }
+
+      try {
+        const res = await fetch(`https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}`);
+        const data = await res.json();
+
+        if (data.error) {
+          msg.className = "error";
+          msg.innerText = "❌ " + data.error.message;
+          return;
+        }
+
+        msg.className = "success";
+        msg.innerText = "✅ Weather data fetched successfully!";
+        card.style.display = "block";
+
+        document.getElementById("location").innerText = `${data.location.name}, ${data.location.country}`;
+        document.getElementById("local-time").innerText = data.location.localtime;
+        document.getElementById("icon").src = "https:" + data.current.condition.icon;
+        document.getElementById("temp").innerText = `${data.current.temp_c}°C`;
+        document.getElementById("condition").innerText = data.current.condition.text;
+
+        document.getElementById("feelslike").innerText = `${data.current.feelslike_c}°C`;
+        document.getElementById("humidity").innerText = `${data.current.humidity}%`;
+        document.getElementById("wind").innerText = `${data.current.wind_kph} km/h`;
+        document.getElementById("pressure").innerText = `${data.current.pressure_mb} hPa`;
+        document.getElementById("visibility").innerText = `${data.current.vis_km} km`;
+        document.getElementById("winddir").innerText = data.current.wind_dir;
+        document.getElementById("cloud").innerText = `${data.current.cloud}%`;
+        document.getElementById("heatindex").innerText = `${data.current.heatindex_c ?? data.current.feelslike_c}°C`;
+
+      } catch (error) {
+        msg.className = "error";
+        msg.innerText = "⚠️ Network or API error. Try again!";
+      }
+    }
+
+    searchBtn.addEventListener("click", fetchWeather);
+    cityInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") fetchWeather();
+    });
+  </script>
+
+</body>
+</html>

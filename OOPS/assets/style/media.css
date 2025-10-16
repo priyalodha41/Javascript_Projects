@@ -1,0 +1,50 @@
+@media (max-width: 991px) {
+  .container {
+    padding: 15px;
+  }
+  .row {
+    flex-direction: column;
+  }
+  .col-lg-4, .col-lg-8 {
+    width: 100%;
+  }
+  .btn {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  table {
+    font-size: 0.85rem;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+
+  #searchInput {
+    width: 100% !important;
+  }
+
+  .d-flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .d-flex button {
+    width: 80%;
+  }
+   .d-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .d-flex button {
+    width: 80% !important;
+  }
+}
