@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>COVID-19 India Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="./assets/style/style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+   <h1><i class="ri-virus-fill"></i> India COVID-19 Tracker</h1>
+<p>Accurate, state-wise pandemic updates to keep you informed and aware</p>
+    </div>
+
+    <div class="search-section">
+      <div class="search-container">
+        <input type="text" class="search-input" id="stateInput"
+               placeholder="Enter state name (e.g., Maharashtra, Delhi, Karnataka...)"/>
+        <button class="search-btn" id="searchBtn"><i class="ri-search-line"></i> Search</button>
+      </div>
+    </div>
+
+    <div id="loadingMessage" class="loading" style="display: none;">
+      <p><i class="ri-loop-left-line"></i> Loading data...</p>
+    </div>
+
+    <div id="noDataMessage" class="no-data" style="display: none;">
+      <h3><i class="ri-map-pin-line"></i> No Data Found</h3>
+      <p>Please enter a valid Indian state name and try again.</p>
+    </div>
+
+    <div class="stats-container fade-in" id="statsContainer" style="display: none;">
+      <h2 class="state-title" id="stateTitle">Select a state to view statistics</h2>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="ri-bar-chart-2-fill"></i></div>
+          <div class="stat-number total-cases" id="totalCases">-</div>
+          <div class="stat-label">Total Confirmed Cases</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">IN</div>
+          <div class="stat-number indian-cases" id="indianCases">-</div>
+          <div class="stat-label">Indian Cases</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon"><i class="ri-earth-fill"></i></div>
+          <div class="stat-number foreign-cases" id="foreignCases">-</div>
+          <div class="stat-label">Foreign Cases</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon"><i class="ri-heart-3-fill"></i></div>
+          <div class="stat-number discharged" id="discharged">-</div>
+          <div class="stat-label">Discharged</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon"><i class="ri-skull-fill"></i></div>
+          <div class="stat-number deaths" id="deaths">-</div>
+          <div class="stat-label">Deaths</div>
+        </div>
+      </div>
+      <div class="chart-container">
+        <h3><i class="ri-bar-chart-box-fill"></i> COVID-19 Stats Graph</h3>
+        <canvas id="covidChart"></canvas>
+      </div>
+
+      <div class="summary-card">
+        <div class="summary-title"><i class="ri-line-chart-line"></i> Key Metrics</div>
+        <div class="metrics-row">
+          <div class="metric">
+            <div class="metric-label">Recovery Rate</div>
+            <div class="rate-value" id="recoveryRate">- %</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Mortality Rate</div>
+            <div class="rate-value" id="mortalityRate">- %</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="./assets/Js/script.js"></script>
+</body>
+</html>

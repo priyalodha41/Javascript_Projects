@@ -1,0 +1,251 @@
+:root {
+    --bg: #0f1724;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --accent: #bda841;
+    --muted: rgba(255, 255, 255, 0.6);
+    --green: #2ecc71;
+    --red: #ff6b6b;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 103%;
+    margin: 0;
+    font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+    background: linear-gradient(135deg, #bda841, #577bc1);
+    color: #fff
+}
+
+.container {
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 22px
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 18px
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 22px
+}
+
+.header p {
+    margin: 6px 0 0;
+    color: var(--muted)
+}
+
+.search-section {
+    display: flex;
+    justify-content: center;
+    margin: 16px 0
+}
+
+.search-container {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    max-width: 720px
+}
+
+.search-input {
+    flex: 1;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(190, 153, 44, 0.507);
+    color: #fff;
+    font-size: 14px;
+    outline: none
+}
+
+.search-input:focus {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    border-color: rgba(253, 133, 13, 0.6);
+    transform: translateY(-1px)
+}
+
+.search-btn {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: none;
+    background: linear-gradient(180deg, var(--accent), #577bc1);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px
+}
+
+.loading,
+.no-data {
+    max-width: 720px;
+    margin: 12px auto;
+    padding: 12px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    text-align: center;
+    color: var(--muted)
+}
+
+.stats-container {
+    max-width: 880px;
+    margin: 18px auto;
+    padding: 18px;
+    border-radius: 12px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    border: 1px solid rgba(255, 255, 255, 0.03)
+}
+
+.state-title {
+    margin: 0 0 14px;
+    text-align: center;
+    color: var(--muted)
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+    margin-bottom: 14px
+}
+
+.stat-card {
+    padding: 16px;
+    border-radius: 10px;
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    text-align: center
+}
+
+.stat-icon {
+    font-size: 18px;
+    margin-bottom: 6px;
+    opacity: 0.95
+}
+
+.stat-number {
+    font-size: 18px;
+    font-weight: 700
+}
+
+.stat-label {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 6px
+}
+
+.summary-card {
+    padding: 12px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px
+}
+
+.summary-title {
+    font-weight: 600;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 8px
+}
+
+.metrics-row {
+    display: flex;
+    gap: 24px
+}
+
+.metric {
+    min-width: 140px;
+    text-align: center
+}
+
+.metric-label {
+    font-size: 13px;
+    color: var(--muted)
+}
+
+.rate-value {
+    font-weight: 700;
+    font-size: 16px
+}
+
+/* ✅ GRAPH / CHART STYLING */
+.chart-section {
+    margin: 28px auto;
+    max-width: 880px;
+    padding: 20px;
+    border-radius: 12px;
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.chart-title {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--muted);
+    margin-bottom: 12px;
+}
+
+canvas {
+    width: 100% !important;
+    max-height: 350px;
+    margin-top: 10px;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 18px;
+    color: var(--muted);
+    font-size: 13px
+}
+
+.fade-in {
+    animation: fadeIn .35s ease-out
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+@media (max-width:900px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .metrics-row {
+        flex-wrap: wrap;
+        justify-content: center
+    }
+}
+
+@media (max-width:480px) {
+    .stats-grid {
+        grid-template-columns: repeat(1, 1fr)
+    }
+
+    .container {
+        padding: 12px
+    }
+}
